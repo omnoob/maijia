@@ -2,28 +2,15 @@
   <div>
     <div class="bottom-nav">
       <ul>
-        <li class="active">
-          <a href="index.html">
-            <i class="icon-home"></i>
-            <div>有赞</div>
-          </a>
-        </li>
-        <li>
-          <a href="https://maijia.youzan.com/mars/category">
-            <i class="icon-category"></i>
-            <div>分类</div>
-          </a>
-        </li>
-        <li>
-          <a href="https://h5.youzan.com/v2/trade/cart?f_platform=yzapp&amp;source=yzapp">
-            <i class="icon-cart"></i>
-            <div>购物车</div>
-          </a>
-        </li>
-        <li>
-          <a href="https://h5.youzan.com/v2/buyer/member">
-            <i class="icon-user"></i>
-            <div>我</div>
+        <li
+          :class="{active:index===curIndex}"
+          v-for="(list,index) in navConfig"
+          :key="index"
+          @click="changeNav(list,index)"
+        >
+          <a>
+            <i :class="list.icon"></i>
+            <div>{{list.name}}</div>
           </a>
         </li>
       </ul>
@@ -33,7 +20,50 @@
 
 
 <script>
-export default {};
+import qs from 'qs'
+
+let navConfig = [
+  {
+    name: '有赞',
+    href: 'index.html',
+    icon: 'icon-home'
+  },
+  {
+    name: '分类',
+    href: 'category.html',
+    icon: 'icon-category'
+  },
+  {
+    name: '购物车',
+    href: 'cart.html',
+    icon: 'icon-cart'
+  },
+  {
+    name: '我',
+    href: 'member.html',
+    icon: 'icon-user'
+  }
+];
+let {index} = qs.parse(location.search.substr(1))
+// 等价于 
+// let index = qs.parse(location.search.substr(1)).index 
+
+export default {
+  data() {
+    return {
+      navConfig,
+      curIndex: parseInt(index) || 0
+    };
+  },
+  created(){   
+  },
+  methods: {
+    changeNav(list, index) {
+      // this.curIndex = index;
+      location.href = `${list.href}?index=${index}`
+    }
+  }
+};
 </script>
 
 <style>
@@ -43,7 +73,7 @@ export default {};
   height: 50px;
   bottom: 0;
   background-color: #fff;
-  z-index: 8;
+  z-index: 99999;
   -o-border-image: url(https://b.yzcdn.cn/v2/image/wap/border-line-2.png) 2
     stretch;
   border-image: url(https://b.yzcdn.cn/v2/image/wap/border-line-2.png) 2 stretch;

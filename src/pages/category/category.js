@@ -4,7 +4,8 @@ import './category.css'
 import Vue from 'vue'
 import axios from 'axios'
 import url from '@/modules/js/api.js'
-import Foot from '@/components/Foot.vue'
+// import Foot from '@/components/Foot.vue'
+import mixin from 'js/mixin.js'
 
 new Vue({
   el: '#app',
@@ -46,14 +47,18 @@ new Vue({
       axios.get(url.rank).then(res => {
         this.rankData = res.data.data
       })
+    },
+    getSearchList(list){
+      location.href = `search.html?keyword=${list.name}&cate_id=${list.id}`
     }
   },
-  filters: {
-    formatePrice(value) {
-      return value.toFixed(2)
-    }
-  },
-  components: {
-    Foot
-  }
+  // filters: {
+  //   formatePrice(value) {
+  //     return value.toFixed(2)
+  //   }
+  // },
+  // components: {
+  //   Foot
+  // }
+  mixins:[mixin]
 })

@@ -1,2 +1,2 @@
 import './member_base.css'
-import './menber.css'
+import './member.css'

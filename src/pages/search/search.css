@@ -242,7 +242,7 @@ img {
 }
 
 .container {
-  background-color: #f4f4f4
+  background-color: #f4f4f4;
 }
 
 .with-bottom-nav {
@@ -1071,7 +1071,7 @@ only screen and (min-device-pixel-ratio:1.5) {
 }
 
 .go-to-top {
-  display: none;
+  /* display: none; */
   position: fixed;
   right: 15px;
   bottom: 60px;

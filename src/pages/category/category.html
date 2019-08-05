@@ -133,6 +133,7 @@
                     :data-item-id="list.id" 
                     :data-item-name="list.name"
                     v-for="list in subData.brandList"
+                    @click="getSearchList(list)"
                 >
                   <img
                     :src="list.img"
@@ -147,6 +148,7 @@
                     :data-item-id="list.id" 
                     :data-item-name="list.name"
                     v-for="list in subData.categoryList"
+                    @click="getSearchList(list)"
                 >
                   <img
                     :src="list.img"
