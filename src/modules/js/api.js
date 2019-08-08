@@ -7,12 +7,19 @@ let url = {
   searchList: '/search/list',
   details: '/goods/details',
   deal: '/goods/deal',
+
   cartAdd: '/cart/add',
   cartList: '/cart/list',
   cartUpdate: '/cart/update',
   cartReduce: '/cart/reduce',
   cartRemove: '/cart/remove',
-  cartMrremove: '/cart/mrremove'
+  cartMrremove: '/cart/mrremove',
+  
+  addressAdd:'/address/add',
+  addressRemove:'/address/remove',
+  addressList:'/address/list',
+  addressUpdate:'/address/update',
+  addressSetDefault: '/address/setDefault'
 }
 
 // 开发环境和真实环境切换（手动）
