@@ -2,12 +2,17 @@ let url = {
   hotLists: '/index/hotLists',
   banner: '/index/banner',
   topList: '/category/topList',
-  subList:'/category/subList',
-  rank:'/category/rank',
-  searchList:'/search/list',
-  details:'/goods/details',
-  deal:'/goods/deal',
-  addCart :'/cart/add'
+  subList: '/category/subList',
+  rank: '/category/rank',
+  searchList: '/search/list',
+  details: '/goods/details',
+  deal: '/goods/deal',
+  cartAdd: '/cart/add',
+  cartList: '/cart/list',
+  cartUpdate: '/cart/update',
+  cartReduce: '/cart/reduce',
+  cartRemove: '/cart/remove',
+  cartMrremove: '/cart/mrremove'
 }
 
 // 开发环境和真实环境切换（手动）
