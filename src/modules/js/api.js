@@ -15,9 +15,9 @@ let url = {
   cartRemove: '/cart/remove',
   cartMrremove: '/cart/mrremove',
   
+  addressList:'/address/list',
   addressAdd:'/address/add',
   addressRemove:'/address/remove',
-  addressList:'/address/list',
   addressUpdate:'/address/update',
   addressSetDefault: '/address/setDefault'
 }

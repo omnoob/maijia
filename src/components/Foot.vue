@@ -49,13 +49,18 @@ let {index} = qs.parse(location.search.substr(1))
 // let index = qs.parse(location.search.substr(1)).index 
 
 export default {
+  props:['obj'],
   data() {
     return {
       navConfig,
-      curIndex: parseInt(index) || 0
+      curIndex: parseInt(index) || 0 ,
+      ob: JSON.parse(JSON.stringify(this.obj))
     };
   },
   created(){   
+    setTimeout(() => {
+      this.ob.obj = 18
+    }, 3000);
   },
   methods: {
     changeNav(list, index) {

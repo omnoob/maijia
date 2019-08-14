@@ -20,7 +20,10 @@ let app = new Vue({
     pageSize: 6,
     loading: false, // false 表示可以加载，true表示不可以再往下加载了
     allLoaded: false, // 
-    bannerLists: null
+    bannerLists: null,
+    obj:{
+      age:20
+    }
   },
   components: {
     Foot, // 此为ES6写法， 等于 Foot: Foot
